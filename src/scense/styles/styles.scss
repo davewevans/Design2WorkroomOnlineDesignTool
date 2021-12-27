@@ -1,0 +1,122 @@
+.panel-items-list {
+    width: 72px;
+    background: #0e1419;
+    color: #fff;
+  }
+  
+  .panel-items-list-item {
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    height: 72px;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+    transition: color 0.2s;
+    color: rgba($color: #ffffff, $alpha: 0.8);
+    &:hover {
+      color: rgba($color: #ffffff, $alpha: 1);
+    }
+    &.active {
+      background: #353e3b;
+      color: rgba($color: #ffffff, $alpha: 1);
+    }
+    span {
+      padding-top: 0.2rem;
+    }
+    @media (max-width: "1000px") {
+      height: 82px;
+      width: 82px;
+    }
+  }
+  .panels {
+    position: relative;
+    // background: #29303a;
+    box-shadow: 5px 0 5px -5px rgba(0, 0, 0, 0.5);
+    display: flex;
+    user-select: none;
+  }
+  
+  .panel-item-close {
+    cursor: pointer;
+    position: absolute;
+    top: 40%;
+    right: 30px;
+    transform: translate(100%, -50%);
+    z-index: 2;
+    @media (max-width: "1000px") {
+      z-index: 2222;
+    }
+  }
+  
+  .c1 {
+    margin-left: -6px;
+    cursor: pointer;
+    border: none;
+    background: none;
+    overflow: hidden;
+    pointer-events: none;
+    position: relative;
+    color: #fff;
+    right: -5px;
+  }
+  
+  .c2 {
+    margin-left: -6px;
+    border: none;
+    right: 8px;
+    position: relative;
+    justify-content: center;
+    position: absolute;
+    color: #fff;
+    top: 50%;
+    transform: translate(100%, -50%);
+  }
+  
+  .panel-item-container {
+    width: 0;
+    transition: width 0.5s;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    z-index: 1000;
+    background-color: #353e3b;
+    &.open {
+      width: 270px;
+      @media (max-width: "1000px") {
+        height: 273px;
+        width: 100%;
+        border-top-right-radius: 20px;
+        border-top-left-radius: 20px;
+        transition: height 0.5s;
+      }
+    }
+  }
+  .canvas-container {
+    background-color: #fff;
+    margin: auto;
+    margin-top: 50px;
+    height: 854px !important;
+    width: 600px !important;
+    @media (max-width: "600px") {
+      height: 654px !important;
+      width: 400px !important;
+    }
+    @media (max-width: "500px") {
+      height: 546.6px !important;
+      width: 326px !important;
+    }
+  }
+  .upper-canvas, .lower-canvas {
+    @media (max-width: "660px") {
+      height: 654px !important;
+      width: 390px !important;
+    }
+    @media (max-width: "500px") {
+      height: 546.6px !important;
+      width: 326px !important;
+    }
+  }
+  

@@ -1,0 +1,11 @@
+export {default as win1 } from "./win1.jpg";
+export {default as win2} from "./win2.jpg";
+export {default as win3} from "./win3.jpg";
+export {default as win4} from "./win4.jpg";
+export {default as win5} from "./win5.jpg";
+export {default as win6} from "./win6.jpg";
+export {default as win7} from "./win7.jpg";
+export {default as win8} from "./win8.jpg";
+export {default as win9} from "./win9.jpg";
+export {default as win10} from "./win10.jpg";
+export {default as win11} from "./win11.jpg";
