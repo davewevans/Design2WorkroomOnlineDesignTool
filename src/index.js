@@ -17,11 +17,11 @@ const DesignerId = url.searchParams.get("DesignerId");
 
 fetch(APIBaseURL + "api/clients/" + ClientId)
 .then(res => {
-    if(res.status != "404")
+    if(res.status !== "404")
     {
       fetch(APIBaseURL + "api/designers/" + DesignerId)
       .then(res1 => {
-        if(res1.status != "404")
+        if(res1.status !== "404")
         {
           ReactDOM.render(
             <EditorProvider>
