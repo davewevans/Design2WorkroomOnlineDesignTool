@@ -1,6 +1,7 @@
 import { Box, Flex, Grid } from "@theme-ui/components";
-import React from "react";
+import React, { useState, useEffect } from 'react';
 import { fabric } from "fabric";
+import { APIBaseURL } from "../../../../index";
 import {
   win2,
   win1,
@@ -32,6 +33,20 @@ const PhotoPanel = () => {
     win10,
     win11,
   ];
+
+  const [UploadedPics, setUploadedPics] = useState([]);
+  var DefaultPicsCount;
+
+  //fetch uploaded images
+  useEffect(() => {
+  fetch(APIBaseURL + 'api/ClientDesign')
+    .then((res) => res.json())
+    .then((json) => {
+      setUploadedPics(json);
+      DefaultPicsCount = pics.length;
+  });  
+  }, []);
+
   const addImageToCanvas = (pic) => {
     fabric?.Image?.fromURL(pic, function (myImg) {
       myImg.set({
@@ -41,6 +56,7 @@ const PhotoPanel = () => {
       canvas.setActiveObject(myImg);
     });
   };
+  
   return (
     <Grid
       sx={{
@@ -60,6 +76,16 @@ const PhotoPanel = () => {
           </Box>
         </Flex>
       ))}
+
+      {UploadedPics.map((pic, index) => (
+        <Flex key={DefaultPicsCount++} sx={{ cursor: "pointer" }}>
+          <Box sx={{ width: "150px" }} onClick={() => addImageToCanvas(pic.imageUrl)}>
+            <img src={pic.imageUrl} alt="img" style={{ width: "100%" }} />
+          </Box>
+        </Flex>
+      ))
+
+      }
     </Grid>
   );
 };

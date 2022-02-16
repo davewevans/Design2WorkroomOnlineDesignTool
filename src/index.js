@@ -5,10 +5,10 @@ import App from "./App";
 import { EditorProvider } from "./IntroirEditorBox/context";
 
 //local API Url
-//export const APIBaseURL = "https://localhost:7176/";
+export const APIBaseURL = "https://localhost:7176/";
 
-//live API Url
-export const APIBaseURL = "https://d2w-dev-web-app-api.azurewebsites.net/";
+// //live API Url
+// export const APIBaseURL = "https://d2w-dev-web-app-api.azurewebsites.net/";
 
 const url_string = window.location.href;
 const url = new URL(url_string);
