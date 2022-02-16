@@ -52,9 +52,10 @@ const PhotoPanel = () => {
       myImg.set({
         type: "image",
       });
+      myImg.crossOrigin = 'anonymous';
       canvas.add(myImg);
       canvas.setActiveObject(myImg);
-    });
+    }, { crossOrigin: 'anonymous' });
   };
   
   return (
@@ -80,7 +81,7 @@ const PhotoPanel = () => {
       {UploadedPics.map((pic, index) => (
         <Flex key={DefaultPicsCount++} sx={{ cursor: "pointer" }}>
           <Box sx={{ width: "150px" }} onClick={() => addImageToCanvas(pic.imageUrl)}>
-            <img src={pic.imageUrl} alt="img" style={{ width: "100%" }} />
+            <img src={pic.imageUrl} alt="img" style={{ width: "100%" }}/>
           </Box>
         </Flex>
       ))
