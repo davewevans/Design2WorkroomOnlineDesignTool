@@ -3,12 +3,22 @@ import { Box, Flex } from "@theme-ui/components";
 import PanelItem from "./PanelListItem";
 import { tabItems } from "./tabsItems";
 import "../../../styles/styles.scss";
-import Scrollbars from "react-custom-scrollbars";
+import { Scrollbar } from 'react-scrollbars-custom';
 import { useCanvasValue } from "../../../../IntroirEditorBox/context";
 
+//ref" https://github.com/xobotyi/react-scrollbars-custom
+/*
+ <Scrollbar
+        renderThumbVertical={() => (
+          <div style={{ background: "rgba(255,255,255,0.3)" }}></div>
+        )}
+        autoHide
+        style={{display:'flex'}}
+      >
+*/
 
 function PanelList(props) {
-  const {  setPanelOpen, panelOpen } = props;
+ const {  setPanelOpen, panelOpen } = props;
  const {activeTab, setActiveTab} = useCanvasValue()
   return (
     <Box
@@ -27,15 +37,9 @@ function PanelList(props) {
         },
       }}
     >
-      <Scrollbars
-        renderThumbVertical={() => (
-          <div style={{ background: "rgba(255,255,255,0.3)" }}></div>
-        )}
-        autoHide
-        style={{display:'flex'}}
-      >
+      <Scrollbar style={{display:'flex'}}>
         <Flex sx={
-          { 
+          {
              flexDirection:'column',
               '@media screen and (max-width: 1000px)': {
             display: "flex",
@@ -57,7 +61,7 @@ function PanelList(props) {
           />
         ))}
         </Flex>
-      </Scrollbars>
+      </Scrollbar>
     </Box>
   );
 }
