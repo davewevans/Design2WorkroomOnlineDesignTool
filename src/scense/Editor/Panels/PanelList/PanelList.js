@@ -15,6 +15,7 @@ import { useCanvasValue } from "../../../../IntroirEditorBox/context";
         autoHide
         style={{display:'flex'}}
       >
+
 */
 
 function PanelList(props) {
